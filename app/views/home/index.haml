@@ -5,9 +5,15 @@
   .offset-md-3.col-md-6.offset-1.col-10
     = image_tag('morale-logo.png', class: 'logo align-bottom')
 .social-media
-  .fab.fa-facebook-square.social-media-logo.fa-2x
-  .fab.fa-twitter.social-media-logo.fa-2x
-  .fab.fa-instagram.social-media-logo.fa-2x
-  .fab.fa-apple.social-media-logo.fa-2x
-  .fab.fa-spotify.social-media-logo.fa-2x
-  .fab.fa-youtube.social-media-logo.fa-2x
+  = link_to 'https://www.facebook.com/moralebanduk', class: 'social-media-link' do
+    .fab.fa-facebook-square.social-media-logo.fa-2x
+  = link_to 'https://twitter.com/MoraleBandUK', class: 'social-media-link' do
+    .fab.fa-twitter.social-media-logo.fa-2x
+  = link_to 'https://www.instagram.com/moralebanduk', class: 'social-media-link' do
+    .fab.fa-instagram.social-media-logo.fa-2x
+  = link_to 'https://www.youtube.com/watch?v=jlZ8BP15_E8', class: 'social-media-link' do
+    .fab.fa-youtube.social-media-logo.fa-2x
+  = link_to 'https://itunes.apple.com/us/artist/morale/1386819245', class: 'social-media-link' do
+    .fab.fa-apple.social-media-logo.fa-2x
+  = link_to 'https://open.spotify.com/artist/6GRMSo8aC09i25DVa8KVSO?si=cA-WRHYMRhOQ1kppPRyEDw', class: 'social-media-link' do
+    .fab.fa-spotify.social-media-logo.fa-2x
