@@ -49,6 +49,12 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano3-puma', require: false
+  gem 'rvm1-capistrano3', require: false
+  gem 'haml_lint', require: false
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
