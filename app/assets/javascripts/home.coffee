@@ -2,10 +2,21 @@ $(document).on 'turbolinks:load', ->
   isChrome =
     /Chrome/.test(navigator.userAgent) and /Google Inc/.test(navigator.vendor)
 
+  isSafari =
+    /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+
+  isMobile =
+    /Mobi/.test(navigator.userAgent)
+
   if !isChrome
     $('#iframeAudio').remove()
   else
     $('.background-music').remove()
+
+  if isSafari || isMobile
+    $('.background-music').attr('muted', true).prop('muted', true)
+    $('.mute-icon .fas').removeClass('fa-volume-up').addClass('fa-volume-off')
+
 
   $('.mute-icon').click ->
     if !isChrome
@@ -29,4 +40,3 @@ muteIframeTag = ->
   else
     $video.attr('muted', true).prop('muted', true)
     $('.mute-icon .fas').removeClass('fa-volume-up').addClass('fa-volume-off')
-
