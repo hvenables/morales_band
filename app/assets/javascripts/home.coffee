@@ -1,9 +1,32 @@
 $(document).on 'turbolinks:load', ->
+  isChrome =
+    /Chrome/.test(navigator.userAgent) and /Google Inc/.test(navigator.vendor)
+
+  if !isChrome
+    $('#iframeAudio').remove()
+  else
+    $('.background-music').remove()
+
   $('.mute-icon').click ->
-    console.log('hello')
-    if $('.background-music').filter('[muted=true]').length > 0
-      $('.background-music').attr('muted', false).prop('muted', false)
-      $('.mute-icon .fas').removeClass('fa-volume-off').addClass('fa-volume-up')
+    if !isChrome
+      muteAudioTag()
     else
-      $('.background-music').attr('muted', true).prop('muted', true)
-      $('.mute-icon .fas').removeClass('fa-volume-up').addClass('fa-volume-off')
+      muteIframeTag()
+
+muteAudioTag = ->
+  if $('.background-music').filter('[muted=true]').length > 0
+    $('.background-music').attr('muted', false).prop('muted', false)
+    $('.mute-icon .fas').removeClass('fa-volume-off').addClass('fa-volume-up')
+  else
+    $('.background-music').attr('muted', true).prop('muted', true)
+    $('.mute-icon .fas').removeClass('fa-volume-up').addClass('fa-volume-off')
+
+muteIframeTag = ->
+  $video = $('#iframeAudio').contents().find('video')
+  if $video.filter('[muted=true]').length > 0
+    $video.attr('muted', false).prop('muted', false)
+    $('.mute-icon .fas').removeClass('fa-volume-off').addClass('fa-volume-up')
+  else
+    $video.attr('muted', true).prop('muted', true)
+    $('.mute-icon .fas').removeClass('fa-volume-up').addClass('fa-volume-off')
+
