@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:hvenables/morales_band.git'
 set :rvm1_map_bins, fetch(:rvm1_map_bins) + %w[gem bundle ruby rake]
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/master.key')
 
 server 'moraleband.com', user: "deploy", roles: %w{web app}
 
