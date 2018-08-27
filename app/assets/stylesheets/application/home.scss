@@ -56,8 +56,13 @@ body {
 
 .mail-list {
   color: white;
-  position: relative;
-  bottom: 10%;
-  left: 45%;
-  width: 20%;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 50vh;
+  text-align: center;
+}
+
+.mail-modal, .mail-modal:hover {
+  text-decoration: none !important;
+  color: white;
 }

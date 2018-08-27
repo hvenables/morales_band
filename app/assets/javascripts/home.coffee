@@ -24,6 +24,11 @@ $(document).on 'turbolinks:load', ->
     else
       muteIframeTag()
 
+  $('#modal').on 'shown.bs.modal', ->
+    $('#mail-list-email-input').trigger('focus')
+    $('#mail-list-form').on 'submit', ->
+      $('#modal').modal('hide')
+
 muteAudioTag = ->
   if $('.background-music').filter('[muted=true]').length > 0
     $('.background-music').attr('muted', false).prop('muted', false)
@@ -40,3 +45,4 @@ muteIframeTag = ->
   else
     $video.attr('muted', true).prop('muted', true)
     $('.mute-icon .fas').removeClass('fa-volume-up').addClass('fa-volume-off')
+
