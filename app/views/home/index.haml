@@ -19,27 +19,27 @@
   = link_to 'https://open.spotify.com/artist/6GRMSo8aC09i25DVa8KVSO?si=cA-WRHYMRhOQ1kppPRyEDw', class: 'social-media-link', target: '_blank' do
     .fab.fa-spotify.social-media-logo.fa-2x
 
-.mail-list
-  %a.mail-modal{ href: '#', data: { toggle: 'modal', target: '#mail-list-modal' } }
-    %i.far.fa-envelope-open.fa.2x.social-media-logo
-    JOIN OUR MAIL LIST
+-# .mail-list
+-#   %a.mail-modal{ href: '#', data: { toggle: 'modal', target: '#mail-list-modal' } }
+-#     %i.far.fa-envelope-open.fa.2x.social-media-logo
+-#     JOIN OUR MAIL LIST
 
-#mail-list-modal.modal.fade{role: "dialog", tabindex: "-1"}
-  .modal-dialog.modal-dialog-centered{role: "document"}
-    .modal-content
-      .modal-header
-        %h5.modal-title Join Our Mail List
-        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
-          %span{"aria-hidden" => "true"} ×
-      = form_for :mail_list, url: mail_list_path, remote: true, html: { id: 'mail-list-form', autocomplete: 'off' } do |f|
-        .modal-body
-          .form-group
-            = f.label :email
-            = f.text_field :email, id: 'mail-list-email-input', class: 'form-control'
-            = f.label :first_name
-            = f.text_field :first_name, id: 'mail-list-email-first-name', class: 'form-control'
-            = f.label :last_name
-            = f.text_field :last_name, id: 'mail-list-email-last-name', class: 'form-control'
-        .modal-footer
-          %button.btn.btn-sm.btn-secondary{"data-dismiss" => "modal", type: "button"} Close
-          = f.submit 'Add to mail list', id: 'mail-list-submit', class: 'btn btn-sm btn-primary'
+-# #mail-list-modal.modal.fade{role: "dialog", tabindex: "-1"}
+-#   .modal-dialog.modal-dialog-centered{role: "document"}
+-#     .modal-content
+-#       .modal-header
+-#         %h5.modal-title Join Our Mail List
+-#         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
+-#           %span{"aria-hidden" => "true"} ×
+-#       = form_for :mail_list, url: mail_list_path, remote: true, html: { id: 'mail-list-form', autocomplete: 'off' } do |f|
+-#         .modal-body
+-#           .form-group
+-#             = f.label :email
+-#             = f.text_field :email, id: 'mail-list-email-input', class: 'form-control'
+-#             = f.label :first_name
+-#             = f.text_field :first_name, id: 'mail-list-email-first-name', class: 'form-control'
+-#             = f.label :last_name
+-#             = f.text_field :last_name, id: 'mail-list-email-last-name', class: 'form-control'
+-#         .modal-footer
+-#           %button.btn.btn-sm.btn-secondary{"data-dismiss" => "modal", type: "button"} Close
+-#           = f.submit 'Add to mail list', id: 'mail-list-submit', class: 'btn btn-sm btn-primary'
